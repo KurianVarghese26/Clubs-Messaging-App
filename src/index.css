@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  background-color: #f6f7f6;
+}
+
+.dark body {
+  background-color: #020617;
+}
+
+/* Slim, subtle scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(120, 130, 140, 0.35);
+  border-radius: 8px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(120, 130, 140, 0.4);
+}
+
+/* Native audio elements inside bubbles */
+audio {
+  outline: none;
+}
+audio::-webkit-media-controls-panel {
+  background-color: transparent;
+}
+
+/* Tighten QR svg rendering */
+svg text {
+  user-select: none;
+}
